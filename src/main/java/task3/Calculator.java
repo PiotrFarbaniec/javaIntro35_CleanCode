@@ -20,8 +20,8 @@ public class Calculator {
         return result;
     }
 
-    MathOperations<Number> summing = (valA, valB) -> (valA.doubleValue() + valB.doubleValue());
-    MathOperations<Number> subtraction = (valA, valB) -> valA.doubleValue() - valB.doubleValue();
-    MathOperations<Number> division = (valA, valB) -> valA.doubleValue() / valB.doubleValue();
-    MathOperations<Number> multiplication = (valA, valB) -> valA.doubleValue() * valB.doubleValue();
+    Computable<Number> summing = (valA, valB) -> (valA.doubleValue() + valB.doubleValue());
+    Computable<Number> subtraction = (valA, valB) -> valA.doubleValue() - valB.doubleValue();
+    Computable<Number> division = (valA, valB) -> valA.doubleValue() / valB.doubleValue();
+    Computable<Number> multiplication = (valA, valB) -> valA.doubleValue() * valB.doubleValue();
 }
