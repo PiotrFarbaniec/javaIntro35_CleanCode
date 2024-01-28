@@ -12,7 +12,7 @@ class EmployeeTest {
         //given
         Employee employee = new Employee("John", "Smith");
         //when
-        String actualEmployeeInfo = employee.getemployee_Info();
+        String actualEmployeeInfo = employee.getEmployeeName();
         //then
         Assertions.assertNotNull(actualEmployeeInfo);
         Assertions.assertEquals("Employee name : John Smith", actualEmployeeInfo);
@@ -23,7 +23,7 @@ class EmployeeTest {
         //given
         Employee employee = new Employee("John", "Smith", 45);
         //when
-        String actualEmployeeDetails = employee.getEmployeeDetails();
+        String actualEmployeeDetails = employee.getEmployeeNameWithAge();
         //then
         Assertions.assertNotNull(actualEmployeeDetails);
         Assertions.assertEquals("Employee details : John Smith is 45", actualEmployeeDetails);
@@ -36,7 +36,7 @@ class EmployeeTest {
         BigDecimal baseSalary = new BigDecimal("3000");
         Employee employee = new Employee("John", "Smith", 45, baseSalary);
         //when
-        BigDecimal actualBaseSalary = employee.getSalary_2();
+        BigDecimal actualBaseSalary = employee.getBaseSalary();
         //then
         Assertions.assertNotNull(actualBaseSalary);
         Assertions.assertEquals(baseSalary, actualBaseSalary);
@@ -48,9 +48,9 @@ class EmployeeTest {
         //given
         BigDecimal baseSalary = new BigDecimal("3000");
         BigDecimal bonus = new BigDecimal("500");
-        Employee employee = new Employee("John", 45, baseSalary, bonus, "Smith");
+        Employee employee = new Employee("John","Smith", 45, baseSalary, bonus);
         //when
-        BigDecimal actualTotalSalary = employee.getSalary_1();
+        BigDecimal actualTotalSalary = employee.getBaseSalaryWithBonus();
         //then
         Assertions.assertNotNull(actualTotalSalary);
         Assertions.assertEquals(baseSalary.add(bonus), actualTotalSalary);
@@ -61,9 +61,9 @@ class EmployeeTest {
         //given
         BigDecimal baseSalary = new BigDecimal("3000");
         BigDecimal bonus = new BigDecimal("500");
-        Employee employee = new Employee("John", 45, baseSalary, bonus, "Smith");
+        Employee employee = new Employee("John","Smith", 45, baseSalary, bonus );
         //when
-        BigDecimal actualBonus = employee.get_B();
+        BigDecimal actualBonus = employee.getBonus();
         //then
         Assertions.assertNotNull(actualBonus);
         Assertions.assertEquals(bonus, actualBonus);
